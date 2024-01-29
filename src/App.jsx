@@ -2,6 +2,7 @@ import { Header } from './Components/Herder';
 import styles from './App.module.css';
 import './global.css';
 import { Sidebar } from './Components/Sidebar';
+import { Post } from './Components/Post';
 
 
 function App() {
@@ -11,7 +12,9 @@ function App() {
     <Header/>
     <div className={styles.wrapper}> </div>
     <Sidebar/>
-    <main></main>
+    <main>
+      <Post/>
+    </main>
     </div>
   )
 }

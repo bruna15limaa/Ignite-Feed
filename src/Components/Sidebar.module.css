@@ -37,9 +37,12 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    gap: 0.5rem;
+    transition: color 0.2s, backgroun-color 0.2s;
   }
 
   .avatar {
+    box-sizing: initial;
     width: calc(3rem + 12px);
     height: calc(3rem + 12px);
     border-radius: 8px;
@@ -58,4 +61,9 @@
     color: var(--gray-400);
     line-height: 1.6;
   }
+
+.sidebar footer a:hover {
+    background: var(--green-500);
+    color: var(--white);
+}
   

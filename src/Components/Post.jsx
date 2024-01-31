@@ -2,10 +2,13 @@ import { Avatar } from './Avatar';
 import { Comment } from './Comment';
 import styles from './Post.module.css';
 import { format } from 'date-fns';
+import ptBR from 'date-fns/locale/pt-BR';
 
 
 export function Post({ author, publishedAt }) {
-  const publishedDateFormatted  = format(publishedAt, "d 'de' LLLL 'às' HH:mm'h'")
+  const publishedDateFormatted  = format(publishedAt, "d 'de' LLLL 'às' HH:mm'h'",  {
+    locale: ptBR,
+  })
 
   return (
     <article className={styles.post}>
@@ -18,8 +21,8 @@ export function Post({ author, publishedAt }) {
           </div>
         </div>
 
-        <time title="11 de Maio às 08:13h" dateTime="2022-05-11 08:13:00">
-        {publishedDateFormatted}
+        <time title={publishedDateFormatted} dateTime="2022-05-11 08:13:00">
+        
           </time>
       </header>
 

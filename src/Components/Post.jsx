@@ -2,7 +2,7 @@ import { Avatar } from './Avatar';
 import { Comment } from './Comment';
 import styles from './Post.module.css';
 
-export function Post({ author}) {
+export function Post({ author, publishedAt }) {
   return (
     <article className={styles.post}>
       <header>
@@ -14,7 +14,9 @@ export function Post({ author}) {
           </div>
         </div>
 
-        <time title="11 de Maio às 08:13h" dateTime="2022-05-11 08:13:00">Publicado há 1h</time>
+        <time title="11 de Maio às 08:13h" dateTime="2022-05-11 08:13:00">
+        {publishedAt.toString()}
+          </time>
       </header>
 
       <div className={styles.content}>

@@ -12,7 +12,7 @@ export function Post({ author, publishedAt }) {
 
   const publishedDateRelativeToNow = formatDistanceToNow(publishedAt, {
     locale: ptBR,
-
+    addSuffix: true,
   })
 
   return (
@@ -26,7 +26,7 @@ export function Post({ author, publishedAt }) {
           </div>
         </div>
 
-        <time title={publishedDateFormatted} dateTime="2022-05-11 08:13:00">
+        <time title={publishedDateFormatted} dateTime={publishedAt.toISOString()}>
           {publishedDateRelativeToNow}
           </time>
       </header>

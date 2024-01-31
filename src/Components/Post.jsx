@@ -3,6 +3,13 @@ import { Comment } from './Comment';
 import styles from './Post.module.css';
 
 export function Post({ author, publishedAt }) {
+  const publishedDateFormatted  = new Intl.DateTimeFormat('pt-BR',{
+    day: '2-digit',
+    month: 'long',
+    hour: '2-digit',
+    minute: '2-digit'
+  }).format(publishedAt);
+
   return (
     <article className={styles.post}>
       <header>
@@ -15,7 +22,7 @@ export function Post({ author, publishedAt }) {
         </div>
 
         <time title="11 de Maio às 08:13h" dateTime="2022-05-11 08:13:00">
-        {publishedAt.toString()}
+        {publishedDateFormatted}
           </time>
       </header>
 
